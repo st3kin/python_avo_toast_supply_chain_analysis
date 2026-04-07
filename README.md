@@ -4,9 +4,9 @@
 
 ---
 
-## 🍞 Project Overview
+## Project Overview
 
-You're in Sydney, crafting a plate of avocado toast; a staple of modern breakfast culture. But have you ever wondered where those ingredients come from? In this project, I explore the **international supply chain** of this five-ingredient dish:
+You're in Sydney, crafting a plate of avocado toast; a staple of modern breakfast culture. But have you ever wondered where those ingredients come from? In this project, I explore the international supply chain of this five-ingredient dish:
 
 - **Avocado**
 - **Lemon**
@@ -14,16 +14,16 @@ You're in Sydney, crafting a plate of avocado toast; a staple of modern breakfas
 - **Sourdough bread**
 - **Extra virgin olive oil**
 
-Using the **Open Food Facts** database, I conducted an origin analysis of three primary ingredients: **avocados, olive oil, and sourdough bread**. The goal was to highlight the global complexity behind a seemingly simple meal.
+Using the Open Food Facts database, I conducted an origin analysis of three primary ingredients: avocados, olive oil, and sourdough bread. The goal was to highlight the global complexity behind a seemingly simple meal.
 
 ---
 
-## 📦 Data Sources
+## Data Sources
 
 Each ingredient is supported by two files located in the `CSV_files/` directory:
 
 - **CSV files** (`avocado.csv`, `olive_oil.csv`, `sourdough.csv`) contain product-level metadata and origin tags.
-- **TXT files** list the **relevant category tags** for filtering out non-matching entries.
+- **TXT files** list the relevant category tags for filtering out non-matching entries.
 
 I focused on:
 - Filtering by relevant `categories_tags`.
@@ -32,13 +32,13 @@ I focused on:
 
 ---
 
-## 🧹 Data Cleaning
+## Data Cleaning
 
 Each dataset required country name standardisation due to inconsistent labeling (e.g., `"Espagne"` → `"Spain"`, `"Pérou"` → `"Peru"`). I used dictionaries to normalise values and converted `origins` to categorical dtype for memory efficiency.
 
 ---
 
-## 🔍 Methodology
+## Methodology
 
 ```python
 def read_and_filter_data(df, colname, top_n=1):
@@ -46,14 +46,14 @@ def read_and_filter_data(df, colname, top_n=1):
 ```
 
 Each product file was processed to:
-- Select only **relevant columns** (e.g., `product_name_en`, `origins`, `categories_tags`).
+- Select only relevant columns (e.g., `product_name_en`, `origins`, `categories_tags`).
 - Normalise country names.
 - Count frequency of each country listed in the `origins` field.
-- Display the **top contributor(s)** per ingredient.
+- Display the top contributor(s) per ingredient.
 
 ---
 
-## 🌍 Findings
+## Findings
 
 | Ingredient     | Top Origin(s)       |
 |----------------|---------------------|
@@ -61,11 +61,11 @@ Each product file was processed to:
 | Olive Oil      | Spain       |
 | Sourdough Bread| United Kingdom      |
 
-Even the simplest meal is the product of a **vast, interconnected global food system**.
+Even the simplest meal is the product of a vast, interconnected global food system.
 
 ---
 
-## 🛠️ Tools Used
+## Tools Used
 
 | Purpose              | Tool            |
 |----------------------|-----------------|
@@ -73,15 +73,10 @@ Even the simplest meal is the product of a **vast, interconnected global food sy
 | Data Source          | Open Food Facts |
 | File Formats         | CSV, TXT        |
 
----
-
-## 📄 License
-
-This project is for educational and non-commercial use. Data is sourced from [Open Food Facts](https://world.openfoodfacts.org/) under the Open Database License.
 
 ---
 
 ## 👤 Author
 
-**Sevban Eksi**   
+**Sevban Tekin-Eksi**   
 [GitHub](https://github.com/st3kin)
